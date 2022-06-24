@@ -1,0 +1,181 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>Re2 | kiki的博客</title><meta name="keywords" content="re"><meta name="author" content="REHEroadchick"><meta name="copyright" content="REHEroadchick"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="#Re2  https:&#x2F;&#x2F;blog.csdn.net&#x2F;alidada_blog&#x2F;article&#x2F;details&#x2F;81290323  修复之后，发现这里有个永真  进入二进制界面批量删改 重编译之后，稍微修修  得到正常界面 在进入程序启动之前，会在初始化中跳转指制定的初始化进程 也就是一个反调试的窗口，这里可以通过反调试的窗口内容交叉检索出来 对其跳转条件进行修改就可以绕过。同时在进入主函数之后">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Re2">
+<meta property="og:url" content="https://reher0adchick.github.io/2022/06/24/SYC%20Re2%207b39d9c36cfe40ca87bafbb2b3f653ac/index.html">
+<meta property="og:site_name" content="kiki的博客">
+<meta property="og:description" content="#Re2  https:&#x2F;&#x2F;blog.csdn.net&#x2F;alidada_blog&#x2F;article&#x2F;details&#x2F;81290323  修复之后，发现这里有个永真  进入二进制界面批量删改 重编译之后，稍微修修  得到正常界面 在进入程序启动之前，会在初始化中跳转指制定的初始化进程 也就是一个反调试的窗口，这里可以通过反调试的窗口内容交叉检索出来 对其跳转条件进行修改就可以绕过。同时在进入主函数之后">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://reher0adchick.github.io/img/backg.png">
+<meta property="article:published_time" content="2022-06-24T01:03:26.000Z">
+<meta property="article:modified_time" content="2022-06-24T09:08:04.878Z">
+<meta property="article:author" content="REHEroadchick">
+<meta property="article:tag" content="re">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://reher0adchick.github.io/img/backg.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://reher0adchick.github.io/2022/06/24/SYC%20Re2%207b39d9c36cfe40ca87bafbb2b3f653ac/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Re2',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2022-06-24 17:08:04'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/gh/metowolf/MetingJS@1.2/dist/Meting.min.js"></script><div class="aplayer" data-id="502240847" data-server="netease" data-type="playlist" data-fixed="true" data-listFolded="false" data-order="random" data-preload="none"></div><link rel="stylesheet" href="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.css"><script src="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/meting@1.2.0/dist/Meting.min.js"></script><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><script src="/live2d-widget/autoload.js"></script><meta name="generator" content="Hexo 5.4.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><div class="data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">57</div></a></div><div class="data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a></div><div class="data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分啥类啊</span></a></div><div class="menus_item"><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></div><div class="menus_item"><a class="site-page" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/backg.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">kiki的博客</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分啥类啊</span></a></div><div class="menus_item"><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></div><div class="menus_item"><a class="site-page" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Re2</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-06-24T01:03:26.000Z" title="发表于 2022-06-24 09:03:26">2022-06-24</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-06-24T09:08:04.878Z" title="更新于 2022-06-24 17:08:04">2022-06-24</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%BB%83%E4%B9%A0/">练习</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Re2"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>#Re2</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/alidada_blog/article/details/81290323">https://blog.csdn.net/alidada_blog/article/details/81290323</a></p>
+</blockquote>
+<p>修复之后，发现这里有个永真</p>
+<p><img src="/img/Re2/a1.png"></p>
+<p>进入二进制界面批量删改<br><img src="/img/Re2/a2.png"></p>
+<p>重编译之后，稍微修修</p>
+<p><img src="/img/Re2/a3.png"></p>
+<p>得到正常界面</p>
+<p>在进入程序启动之前，会在初始化中跳转指制定的初始化进程</p>
+<p>也就是一个反调试的窗口，这里可以通过反调试的窗口内容交叉检索出来</p>
+<p>对其跳转条件进行修改就可以绕过。同时在进入主函数之后，也就是图中的位置也有个反调试，可以通过nop掉跳转或者是值的更改来绕过</p>
+<p>flag1的加密方式，略微抽象的位运算，这几天一直没啥状态，没写出来</p>
+<p>本质上是一个dword数组不断交换然后加密，首位是不变的。<br><img src="/img/Re2/a4.png"></p>
+<p>写个脚本</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">key=[<span class="number">0x6C637953</span>, <span class="number">0x76656C6F</span>, <span class="number">0xD754C061</span>, <span class="number">0x023BA78B</span>, <span class="number">0xEBFD7C45</span>, <span class="number">0x60CBC8EF</span>, <span class="number">0x9CA6A4BC</span>, <span class="number">0x6BE85ECF</span>, <span class="number">0xE84E5C76</span>, <span class="number">0x07812C36</span>]</span><br><span class="line">flag1=[<span class="number">0</span>]*<span class="number">8</span></span><br><span class="line">flag1[<span class="number">0</span>]=key[<span class="number">0</span>]</span><br><span class="line">flag=<span class="string">&#x27;&#x27;</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,<span class="number">8</span>):  <span class="comment">#换位不影响异或和或操作，可以直接进行异或和或的逆操作</span></span><br><span class="line">      temp = key[i+<span class="number">1</span>]</span><br><span class="line">      <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(i):</span><br><span class="line">         temp^=key[j]</span><br><span class="line">      flag1[i]=(temp&lt;&lt;<span class="number">17</span>)&amp;<span class="number">0xffffffff</span>|(temp&gt;&gt;<span class="number">15</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(flag1)):</span><br><span class="line">      flag+=(<span class="built_in">chr</span>(flag1[i] &amp; <span class="number">0xff</span>))</span><br><span class="line">      flag+=(<span class="built_in">chr</span>(flag1[i] &gt;&gt; <span class="number">8</span> &amp; <span class="number">0xff</span>))</span><br><span class="line">      flag+=(<span class="built_in">chr</span>(flag1[i] &gt;&gt; <span class="number">16</span> &amp; <span class="number">0xff</span>))</span><br><span class="line">      flag+=(<span class="built_in">chr</span>(flag1[i]&gt;&gt;<span class="number">24</span>))</span><br><span class="line"><span class="built_in">print</span>(flag)</span><br><span class="line"><span class="comment">#Syclover&#123;0ne_M0RE_step_To_f1nal&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>前面的flag1应该是得出最终的key</p>
+<p><img src="/img/Re2/a5.png"></p>
+<p>关键加密位置在flag2位置处，而这里的v37就是之前加密过的flag1</p>
+<p><img src="/img/Re2/a6.png"></p>
+<p>进入加密函数，看见了比较类似tea的特征<br><img src="/img/Re2/a7.png"></p>
+<p>进入函数</p>
+<p><img src="/img/Re2/a8.png"><br>后面就是简单的tea环节</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">4</span>):</span><br><span class="line">      a=data_real[i*<span class="number">2</span>]</span><br><span class="line">      b=data_real[i*<span class="number">2</span>+<span class="number">1</span>]</span><br><span class="line">      <span class="keyword">for</span> x <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">31</span>,-<span class="number">1</span>,-<span class="number">1</span>):</span><br><span class="line">            <span class="built_in">sum</span>=(x+<span class="number">1</span>)*delta&amp;<span class="number">0xffffffff</span></span><br><span class="line">            b=b^x&amp;<span class="number">0xffffffff</span></span><br><span class="line">            a=a^x&amp;<span class="number">0xffffffff</span></span><br><span class="line">            b=(b-((key[<span class="number">2</span>]+<span class="number">4</span>*a)^((<span class="built_in">sum</span>+a)^(key[<span class="number">3</span>]+(a&gt;&gt;<span class="number">5</span>)))&amp;<span class="number">0xffffffff</span>)&amp;<span class="number">0xffffffff</span>)&amp;<span class="number">0xffffffff</span></span><br><span class="line">            a=(a-(((key[<span class="number">0</span>]+<span class="number">4</span>*b)^(<span class="built_in">sum</span>+b))&amp;<span class="number">0xffffffff</span>^(key[<span class="number">1</span>]+(b&gt;&gt;<span class="number">5</span>))))&amp;<span class="number">0xffffffff</span></span><br><span class="line">      data_real[i*<span class="number">2</span>]=a</span><br><span class="line">      data_real[i*<span class="number">2</span>+<span class="number">1</span>]=b</span><br><span class="line">final_flag=<span class="string">&#x27;&#x27;</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>( data_real)):</span><br><span class="line">      final_flag+=(<span class="built_in">chr</span>( data_real[i] &amp; <span class="number">0xff</span>))</span><br><span class="line">      final_flag+=(<span class="built_in">chr</span>( data_real[i] &gt;&gt; <span class="number">8</span> &amp; <span class="number">0xff</span>))</span><br><span class="line">      final_flag+=(<span class="built_in">chr</span>( data_real[i] &gt;&gt; <span class="number">16</span> &amp; <span class="number">0xff</span>))</span><br><span class="line">      final_flag+=(<span class="built_in">chr</span>( data_real[i]&gt;&gt;<span class="number">24</span>))</span><br><span class="line"><span class="built_in">print</span>(final_flag)</span><br><span class="line"></span><br><span class="line"><span class="comment">#Syclover&#123;st3psCanBeAccumu1ated~&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>总结</p>
+<p>这题本身不难，不过在位运算和tea方面都需要一些耐心去推</p>
+<p>实际上很快就搞出来了，这几天懒散心严重，上完课就啥也不想干了，不行捏</p>
+<p>前半个月倒是有参加比赛什么的 ，因为考试有一周多没有做事情，基本都在复习</p>
+<p>逆向里现在学习了一些基本的动调方法还有一些常见的算法，应该可以做一般的题目了</p>
+<p>但是编程思维和问题解决思维还是没有</p>
+<p>需要再多加练习。</p>
+<p>这个星期继续比赛</p>
+<p>下周复习完高数，下下周考完试就可以去自习室安心写题了。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">REHEroadchick</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://reher0adchick.github.io/2022/06/24/SYC%20Re2%207b39d9c36cfe40ca87bafbb2b3f653ac/">https://reher0adchick.github.io/2022/06/24/SYC%20Re2%207b39d9c36cfe40ca87bafbb2b3f653ac/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://reher0adchick.github.io" target="_blank">kiki的博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/re/">re</a></div><div class="post_share"><div class="social-share" data-image="/img/backg.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2022/05/28/normal32%EF%BC%88%E6%99%AE%E9%80%9A%E7%9A%84%E5%8A%A8%E8%B0%83%E5%92%8C%E6%B5%81%E7%A8%8B%E5%88%A4%E6%96%AD%EF%BC%89%20744685eee5454d2a8fec0a3a8f013974/"><img class="next-cover" src="/img/backg.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">normal系列</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2022/04/18/REdo%201%20a01d7/" title="TAMUCTF 2022"><img class="cover" src="/img/backg.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-04-18</div><div class="title">TAMUCTF 2022</div></div></a></div><div><a href="/2022/04/18/Covfefe%2010d83/" title="TAMUCTF 2022"><img class="cover" src="/img/backg.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-04-18</div><div class="title">TAMUCTF 2022</div></div></a></div><div><a href="/2022/04/25/REdo3%2081ec26c0bf4d4fa1845fad1a15c6657d/" title="TAMUCTF 2022"><img class="cover" src="/img/backg.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-04-25</div><div class="title">TAMUCTF 2022</div></div></a></div><div><a href="/2022/04/18/REdo2%204d8c0/" title="TAMUCTF 2022"><img class="cover" src="/img/backg.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-04-18</div><div class="title">TAMUCTF 2022</div></div></a></div><div><a href="/2022/05/07/b01lers%20f3db56ee4207456fac26ede386f7945e/" title="b01lers 2022"><img class="cover" src="/img/backg.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-05-07</div><div class="title">b01lers 2022</div></div></a></div><div><a href="/2022/03/01/creakme%20573a0/" title="2022 hgame creakme"><img class="cover" src="/img/backg.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-03-01</div><div class="title">2022 hgame creakme</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">REHEroadchick</div><div class="author-info__description">什么事情都发一发，你烦不烦呐？</div></div><div class="card-info-data is-center"><div class="card-info-data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">57</div></a></div><div class="card-info-data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a></div><div class="card-info-data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Reher0adchick"><i class="fab fa-github"></i><span>要来关注我吗www?</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/Reher0adchick" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:1052348060@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">菜鸡的博客</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/06/24/SYC%20Re2%207b39d9c36cfe40ca87bafbb2b3f653ac/" title="Re2">Re2</a><time datetime="2022-06-24T01:03:26.000Z" title="发表于 2022-06-24 09:03:26">2022-06-24</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/05/28/normal32%EF%BC%88%E6%99%AE%E9%80%9A%E7%9A%84%E5%8A%A8%E8%B0%83%E5%92%8C%E6%B5%81%E7%A8%8B%E5%88%A4%E6%96%AD%EF%BC%89%20744685eee5454d2a8fec0a3a8f013974/" title="normal系列">normal系列</a><time datetime="2022-05-28T07:28:36.000Z" title="发表于 2022-05-28 15:28:36">2022-05-28</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/05/28/normal31%EF%BC%88hook%E7%9A%84%E5%AD%A6%E4%B9%A0%EF%BC%8Csm4%E7%AE%97%E6%B3%95%EF%BC%89%20eb92e122225d45d7963b824281ff2e90/" title="normal系列">normal系列</a><time datetime="2022-05-28T07:27:44.000Z" title="发表于 2022-05-28 15:27:44">2022-05-28</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/05/28/normal29/" title="normal系列">normal系列</a><time datetime="2022-05-28T07:26:32.000Z" title="发表于 2022-05-28 15:26:32">2022-05-28</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/05/28/normal28%20%EF%BC%88z3%20%E8%BF%9B%E9%98%B6%E5%AD%A6%E4%B9%A0%EF%BC%8C%E5%90%91%E9%87%8F%E5%BC%82%E6%88%96%EF%BC%8C%E6%95%B0%E5%80%BC%E8%BF%98%E5%8E%9F%EF%BC%8Cyield%E4%BD%BF%E7%94%A8%EF%BC%89%20a7b327b921864d46a4017931d2c4e13d/" title="normal系列">normal系列</a><time datetime="2022-05-28T07:25:24.000Z" title="发表于 2022-05-28 15:25:24">2022-05-28</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By REHEroadchick</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">来到我的 <a href="https://reher0adchick.github.io/">blog</a>就随便逛逛吧!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><div class="js-pjax"></div>null<script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-fluttering-ribbon.min.js"></script><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-show-text.min.js" data-mobile="true" data-text="莉莉丝!,好耶!,我好菜啊QAQ,今天中午吃什么好呢,拯救牛！" data-fontsize="15px" data-random="true" async="async"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/gh/metowolf/MetingJS@1.2/dist/Meting.min.js"></script><div class="aplayer" data-id="502240847" data-server="netease" data-type="playlist" data-fixed="true" data-listFolded="false" data-order="random" data-preload="none"></div><link rel="stylesheet" href="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.css"><script src="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/meting@1.2.0/dist/Meting.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
